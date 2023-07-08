@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "NBA Three Point Shooting Data",
+    "section": "",
+    "text": "My name is Aryan Kancherla, a rising senior at Metea Valley High School. Some of my hobbies include basketball, ping pong, and spending time with friends & family. I have a passion for computer and data science, where I have used Python, Java, Swift, and R."
+  },
+  {
+    "objectID": "about.html#about-me",
+    "href": "about.html#about-me",
+    "title": "NBA Three Point Shooting Data",
+    "section": "",
+    "text": "My name is Aryan Kancherla, a rising senior at Metea Valley High School. Some of my hobbies include basketball, ping pong, and spending time with friends & family. I have a passion for computer and data science, where I have used Python, Java, Swift, and R."
+  },
+  {
+    "objectID": "about.html#about-this-project",
+    "href": "about.html#about-this-project",
+    "title": "NBA Three Point Shooting Data",
+    "section": "About This Project",
+    "text": "About This Project\nI’ve always been a fan of great 3-point shooters such as Stephen Curry, Ray Allen, and Damian Lillard, which led me to analyze the NBA’s 3-Point Shooting Data. From the knowledge I obtained through Kane’s Data Science Bootcamp, a 6-week free data science course, I was able to analyze and create graphs & models from the NBA’s 3-Point Shooting Data set, coming up with interesting conclusions."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "NBA-Three-Point-Shooting-Data",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(readxl)\nlibrary(ggplot2)\nlibrary(gganimate)\n\nNo renderer backend detected. gganimate will default to writing frames to separate files\nConsider installing:\n- the `gifski` package for gif output\n- the `av` package for video output\nand restarting the R session\n\nlibrary(tidytable)\n\nWarning: tidytable was loaded after dplyr.\nThis can lead to most dplyr functions being overwritten by tidytable functions.\nWarning: tidytable was loaded after tidyr.\nThis can lead to most tidyr functions being overwritten by tidytable functions.\n\nAttaching package: 'tidytable'\n\nThe following objects are masked from 'package:dplyr':\n\n    across, add_count, add_tally, anti_join, arrange, between,\n    bind_cols, bind_rows, c_across, case_match, case_when, coalesce,\n    consecutive_id, count, cross_join, cume_dist, cur_column, cur_data,\n    cur_group_id, cur_group_rows, dense_rank, desc, distinct, filter,\n    first, full_join, group_by, group_cols, group_split, group_vars,\n    if_all, if_any, if_else, inner_join, is_grouped_df, lag, last,\n    lead, left_join, min_rank, mutate, n, n_distinct, na_if, nest_by,\n    nest_join, nth, percent_rank, pick, pull, recode, reframe,\n    relocate, rename, rename_with, right_join, row_number, rowwise,\n    select, semi_join, slice, slice_head, slice_max, slice_min,\n    slice_sample, slice_tail, summarise, summarize, tally, top_n,\n    transmute, tribble, ungroup\n\nThe following objects are masked from 'package:purrr':\n\n    map, map_chr, map_dbl, map_df, map_dfc, map_dfr, map_int, map_lgl,\n    map_vec, map2, map2_chr, map2_dbl, map2_df, map2_dfc, map2_dfr,\n    map2_int, map2_lgl, map2_vec, pmap, pmap_chr, pmap_dbl, pmap_df,\n    pmap_dfc, pmap_dfr, pmap_int, pmap_lgl, pmap_vec, walk\n\nThe following objects are masked from 'package:tidyr':\n\n    complete, crossing, drop_na, expand, expand_grid, extract, fill,\n    nest, nesting, pivot_longer, pivot_wider, replace_na, separate,\n    separate_longer_delim, separate_rows, separate_wider_delim,\n    separate_wider_regex, tribble, uncount, unite, unnest,\n    unnest_longer, unnest_wider\n\nThe following objects are masked from 'package:tibble':\n\n    enframe, tribble\n\nThe following objects are masked from 'package:stats':\n\n    dt, filter, lag\n\nThe following object is masked from 'package:base':\n\n    %in%\n\nlibrary(timetk)\n\n\nNBA_Data &lt;- read_excel(\n  path = \"/projects/NBA-Three-Point-Shooting-Data/data/NBA-Three-Point-Shooting-Data-Document.xlsx\", \n  sheet = \"NBA Average data\", \n  col_names = c(\"Years\", \"3PM\", \"3PA\", \"3P%\", \"3P% share in Total Points\"),\n  skip = 4\n)\n\n\nNBA_Data |&gt; tk_tbl() |&gt;  \n    select(Years, `3PA`) |&gt; \n      ggplot(aes(x = Years, y = `3PA`)) + \n        geom_line() + \n          transition_reveal(Years)\n\nWarning in tk_tbl.data.frame(NBA_Data): Warning: No index to preserve. Object\notherwise converted to tibble successfully.\n\n\nWarning: No renderer available. Please install the gifski, av, or magick\npackage to create animated output\n\n\nNULL\n\n          #geom_smooth(formula = y ~ x, method = \"lm\", se = FALSE)"
+  },
+  {
+    "objectID": "about.html#contact-information",
+    "href": "about.html#contact-information",
+    "title": "NBA Three Point Shooting Data",
+    "section": "Contact Information",
+    "text": "Contact Information\nEmail: aryankancherla21@gmail.com\nGithub: https://github.com/aryan-kancherla/\nLinkedin: https://www.linkedin.com/in/aryan-kancherla-a646b1263/"
+  }
+]

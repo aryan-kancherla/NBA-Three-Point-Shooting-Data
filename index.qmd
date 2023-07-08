@@ -2,10 +2,51 @@
 title: "NBA-Three-Point-Shooting-Data"
 ---
 
-This is a Quarto website.
+```{r}
+library(tidyverse)
+library(readxl)
+library(rstanarm)
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+```
+
 
 ```{r}
-1 + 1
+NBA_Data <- read_excel(
+  path = "/projects/NBA-Three-Point-Shooting-Data/data/NBA-Three-Point-Shooting-Data-Document.xlsx", 
+  sheet = "NBA Average data", 
+  col_names = c("Years", "3PM", "3PA", "3P%", "3P% share in Total Points"),
+  skip = 4) |>
+    select(`Years`, `3PA`)
+
+fit_obj <- stan_glm(data = NBA_Data, 
+                    formula = `3PA` ~ 1, 
+                    family = gaussian, 
+                    refresh = 0,
+                    seed = 9)
+
+
+
+
 ```
+
+```{r}
+newobs <- tibble(.rows = 1)
+
+pp <- posterior_epred(object = fit_obj, newdata = newobs) |> 
+  as_tibble() 
+
+
+```
+
+
+```{r}
+pp |>
+    ggplot(aes(x = `1`)) + 
+      geom_histogram(
+        aes(y = after_stat(count/sum(count))),
+        bins = 100)
+
+
+```
+
+

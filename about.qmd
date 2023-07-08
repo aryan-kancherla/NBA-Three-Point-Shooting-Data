@@ -1,9 +1,19 @@
 ---
-title: "About"
 ---
 
-About this site
+## About Me 
+My name is Aryan Kancherla, a rising senior at Metea Valley High School. Some of my hobbies include basketball, ping pong, and spending time with friends & family. I have a passion for computer and data science, where I have used Python, Java, Swift, and R. 
 
-```{r}
-1 + 1
-```
+## About This Project
+
+I've always been a fan of great 3-point shooters such as Stephen Curry, Ray Allen, and Larry Bird, which led me to analyze the NBA's 3-Point Shooting Data. From the knowledge I obtained through [Kane's Data Science Bootcamp](https://bootcamp.davidkane.info/), a 6-week free data science course, I was able to analyze and create graphs & models from the NBA's 3-Point Shooting Data set, coming up with interesting conclusions.
+
+## Contact Information
+
+Email: [aryankancherla21@gmail.com](aryankancherla21@gmail.com)
+
+Github: [https://github.com/aryan-kancherla/](https://github.com/aryan-kancherla/)
+
+Linkedin: [https://www.linkedin.com/in/aryan-kancherla-a646b1263/](https://www.linkedin.com/in/aryan-kancherla-a646b1263/) 
+
+
